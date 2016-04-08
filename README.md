@@ -1,2 +1,2 @@
 # ContactBook
-Contact Book Tr1 UWS Year2
+This is a the source of a contact book I had to make for a coursework in HTML & Js module during trimester 1 or year 2 at UWS in Computer Games development
