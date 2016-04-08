@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Style/index.css">
+    <link href="Style/toastr.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="Plugins/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Plugins/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeCuKlbDluhsnOHWIbuXJkCkka9Je-cTM&"></script>
+    <script src="Script/toastr.js"></script>
+    <script type="text/javascript" src="Plugins/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Script/bootbox.min.js"></script>
+    <script type="text/javascript" src="Plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="Script/Contact.js"></script>
+    <script type="text/javascript" src="Script/Database.js"></script>
+    <script type="text/javascript" src="Script/index.js"></script>
+    <title>My Contact Book</title>
+</head>
+<body>
+<div id="left">
+    <div><button id="addCont">+</button></div>
+    <div><input id="search" type="text" class="form-control" placeholder="Search a contact" /></div>
+    <div>
+        <table id="alphabet">
+            <tr><td>0-9</td><td>A</td><td>B</td><td>C</td></tr>
+            <tr><td>D</td><td>E</td><td>F</td><td>G</td></tr>
+            <tr><td>H</td><td>I</td><td>J</td><td>K</td></tr>
+            <tr><td>L</td><td>M</td><td>N</td><td>O</td></tr>
+            <tr><td>P</td><td>Q</td><td>R</td><td>S</td></tr>
+            <tr><td>T</td><td>U</td><td>V</td><td>W</td></tr>
+            <tr><td>X</td><td>Y</td><td>Z</td><td><b>All</b></td></tr>
+        </table>
+    </div>
+    <div id="groups"></div>
+    <div id="trash" class="drop"><img title="drag a contact here to delete it" src="Images/trash.png" alt="Picture not found"/></div>
+</div>
+<div id="center"><table id="contactList" class="table table-hover"><tr hidden="hidden"><td></td></tr></table></div>
+<div id="right">
+    <input id="choosePhoto" type="file" style="display:none"/>
+    <div id="contactPreview" hidden="hidden">
+        <table>
+            <tr><td rowspan="3"><a class="fancybox" href="#" hidden="hidden"></a><img id="contactPhoto" class="img-thumbnail" src="Images/simplePhoto.png" title="Click to enlarge, doubleclick to change" alt="Picture not found"/></td><td colspan="3" id="name"></td></tr>
+            <tr><td id="DOB" colspan="3"></td></tr>
+            <tr><td id="maritalStat" colspan="3"></td></tr>
+            <tr id="phone"><td colspan="3"></td><td class="add"><button class="btn btn-primary">+</button></td></tr>
+            <tr id="mail"><td colspan="3"></td><td class="add"><button class="btn btn-primary">+</button></td></tr>
+            <tr id="addAddress"><td colspan="3" id="address"></td><td class="add"><img class="location" src="Images/location.png" alt="Picture not found"/><img class="direction" src="Images/direction.png" alt="Picture not found"/><button class="btn btn-primary">+</button></td></tr>
+            <tr><td colspan="2" id="city"></td><td colspan="2" id="postcode"></td></tr>
+            <tr><td id="fb" colspan="2"><img class="preview" src="Images/fb.png" alt="Picture not found"/></td><td id="skype" colspan="2"><img class="preview" src="Images/skype.png" alt="Picture not found"/></td></tr>
+            <tr id="social" hidden="hidden"><td colspan="2"></td><td id="call"><img class="preview" src="Images/call.png" alt="Picture not found"/></td><td id="chat"><img class="preview" src="Images/chat.png" alt="Picture not found"/></td></tr>
+        </table>
+    </div>
+    <div id="mailUI" hidden="hidden">
+        <table>
+            <tr><td colspan="2" class="drop">To : <div id="to"></div><input type="text" hidden="hidden" id="finalTo"/></td></tr>
+            <tr><td colspan="2" class="drop">CC : <div id="cc" ></div><input type="text" hidden="hidden" id="finalCc"/></td></tr>
+            <tr><td colspan="2"><label>Subject : </label><input type="text" id="subject" placeholder="Subject" class="form-control"/></td></tr>
+            <tr><td colspan="2"><textarea class="drop form-control" id="content" rows="15" cols="60" placeholder="Content"></textarea></td></tr>
+            <tr><td><button id="cancelMail" class="btn btn-danger">Cancel</button></td><td><button id="send" class="btn btn-success">Send</button></td></tr>
+        </table>
+    </div>
+    <div id="createContact" hidden="hidden">
+        <table style="width: 100%;text-align: left;" class="table">
+            <tr>
+                <td rowspan="3" colspan="2" id="createPhoto"><img src="Images/simplePhoto.png" class="img-thumbnail" alt="Picture not found"/></td>
+                <td colspan="2" id="createName"><input type="text" placeholder="Name" class="form-control"/></td></tr>
+            <tr>
+                <td id="createDOB" colspan="2"><input type="date" class="form-control"/></td></tr>
+            <tr>
+                <td id="createMaritalStat" colspan="2"><input type="text" class="form-control" placeholder="Marital Status"/></td></tr>
+            <tr id="createPhone">
+                <td colspan="2"><input type="text" placeholder="Name of the phone number" class="form-control"/></td>
+                <td><input type="number" placeholder="Phone" class="form-control"/></td>
+                <td class="createAdd" title="Add a phone number"><button class="btn btn-primary">+</button></td></tr>
+            <tr id="createMail">
+                <td colspan="2"><input type="text" class="form-control" placeholder="Name of the email address"/></td>
+                <td><input type="email" class="form-control" placeholder="Enter email address"/></td>
+                <td class="createAdd" title="Add an email address"><button class="btn btn-primary">+</button></td></tr>
+            <tr id="createNameAddress">
+               <td colspan="3"><input type="text" class="form-control" placeholder="Name of the address"/></td>
+                <td class="createAdd" title="Add an address"><button class="btn btn-primary">+</button></td></tr>
+            <tr id="createAddress">
+                <td colspan="4"><input type="text" class="form-control" placeholder="Enter the address"/></td>
+            <tr>
+                <td colspan="2" id="createCity"><input type="text" class="form-control" placeholder="Enter city"/></td>
+                <td colspan="2" id="createPostcode"><input type="text" class="form-control" placeholder="Enter postcode"/></td></tr>
+            <tr>
+                <td id="createFb" colspan="2"><img class="createContImg" src="Images/fb.png" alt="Picture not found"/><input type="text" class="form-control" placeholder="Facebook profile URL"/></td>
+                <td id="createSkype" colspan="2"><img class="createContImg" src="Images/skype.png" alt="Picture not found"/><input type="text" class="form-control" placeholder="Skype username"/> </td></tr>
+            <tr id="createCancel_Save" style="text-align: center;">
+                <td colspan="2" id="createCancel"><button class="btn btn-danger">Cancel</button></td>
+                <td colspan="2" id="createSave"><button class="btn btn-success">Save</button></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+    </div>
+    <div id="map" hidden="hidden"><iframe src="#"></iframe></div>
+</div>
+<div class="popin">
+</div>
+<div class="popinbg"></div>
+</body>
+</html>

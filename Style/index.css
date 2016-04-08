@@ -1,0 +1,326 @@
+/*
+General Style
+--------------------------------------------
+*/
+#center,#right {
+    padding:10px;
+    width:39%;
+    float:left;
+    text-align:center
+}
+#right {
+    margin-left:5px;
+    margin-right:0;
+    margin-top:0
+}
+#alphabet td,#fbBday,#chatBday,#callBday,#groups td,
+.location,.mail,.fav,#contactList tr:not([class="letter bg-info"])>td:first-child,
+#address,.direction,#fb,#skype,#social img,#createPhoto,#maritalStat,#contactPhoto,
+#phone td:first-child,#mail td:first-child,.removeFromGroup{
+    cursor:pointer
+}
+.location:hover,.mail:hover,.fav:hover,
+.direction:hover,#phone td:first-child:hover,#addAddress td:first-child:hover,
+#mail td:first-child:hover,#fb:hover,#call:hover,#chat:hover {
+    background-color:#E6E6E6
+}
+#center,#left {
+    border-style:none ridge none none
+}
+#toast-container {
+    margin-top:30px
+}
+ul li .img-rounded {
+    width:10%;
+    margin-right:5px;
+}
+/*
+--------------------------------------------
+--------------------------------------------
+*/
+/*
+Left Div Style
+--------------------------------------------
+*/
+#alphabet td {
+    padding:8px
+}
+#alphabet td:hover {
+    border-radius:2px;
+    border:1px solid #ddd
+}
+#alphabet {
+    margin:auto;
+    padding:5px
+}
+#left div {
+    border-bottom:1px ridge #ddd;
+    padding-top:15px;
+    padding-bottom:15px
+}
+.removeGroup:hover {
+    font-weight:bold;
+    background-color:rgba(254,46,46,.7);
+}
+#left {
+    text-align:center;
+    width:19%;
+    float:left;
+    margin-left:0;
+    margin-right:5px;
+    margin-top:0
+}
+#groups table{
+    margin:auto
+}
+#trash img {
+    width:80px
+}
+@keyframes move {
+    from {box-shadow:none;}
+    to {box-shadow: 0 0 20px 5px #6cd962;}
+}
+#addCont {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    background-color:#ffffff;
+    display:inline-block;
+    color:#666666;
+    font-family:Arial;
+    font-size:23px;
+    font-weight:bold;
+    padding:6px 44px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff
+}
+#addCont:hover {
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color:#f6f6f6
+}
+#addCont:active {
+    position:relative;
+    top:1px
+}
+#search {
+    margin:auto;
+    width:80%
+}
+/*
+--------------------------------------------
+--------------------------------------------
+*/
+
+
+/*
+Contact Preview Style
+--------------------------------------------
+*/
+#contactPreview tr {
+    border-style:none none ridge none;
+    border-bottom:2px ridge #ddd
+}
+#contactPreview td {
+    padding:1.2em
+}
+#contactPreview table{
+    width:100%
+}
+#contactPreview td:first-child {
+    border-right:1px solid #ddd
+}
+#addAddress img {
+    margin-right:10px;
+    padding:5px
+}
+#contactPreview input {
+    margin-right:3px
+}
+#dialogCity,#dialogAddrName{
+    margin-right:10px
+}
+.preview {
+    width:50px
+}
+#addAddress img {
+    width:50px
+}
+#contactPhoto {
+    width:150px
+}
+
+/*
+--------------------------------------------
+--------------------------------------------
+*/
+
+
+/*
+Popin Style
+--------------------------------------------
+*/
+.popin table {
+    margin:5px;
+    padding:5px
+}
+.popin table td:first-child {
+    border-right:1px solid #ddd
+}
+.deleteDetails {
+    text-align: center
+}
+.deleteDetails:hover {
+    cursor:pointer;
+    border:1px solid black;
+    background-color:rgba(254,46,46,.7);
+    font-weight:bold
+}
+.popin{
+    position: fixed;
+    display: none;
+    z-index: 100;
+    padding: 20px;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 2px solid #999;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5)
+}
+
+.popinbg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99;
+    display: none
+}
+/*
+--------------------------------------------
+--------------------------------------------
+*/
+
+/*
+Create Contact Style
+--------------------------------------------
+*/
+#createFb .form-control,#createSkype .form-control {
+    width:80%;
+    display:inline-block
+}
+#createPhoto img {
+    width:75%
+}
+.createContImg {
+    width: 30px;
+    margin-right:4px
+}
+.createAdd {
+    padding-left:0;
+    padding-right:0
+}
+#createContact table td {
+    height:2em;
+    vertical-align:middle
+}
+#createContact tr:last-child td {
+    border:none
+}
+#createContact table td {
+    border-right:1px solid #ddd
+}
+/*
+--------------------------------------------
+--------------------------------------------
+*/
+
+
+/*
+MailUI Style
+--------------------------------------------
+*/
+#to,#cc {
+    overflow-x: scroll;
+    display: inline-block;
+    border-radius:3px;
+    border:1px solid #ddd;
+    box-shadow:1px 1px 10px 1px #ddd inset;
+    padding-top:5px
+}
+.recipient {
+    margin:2px;
+    padding:2px;
+    border-style:ridge;
+    font-weight:normal
+}
+.recipient button {
+    height:25px
+}
+.removeRecip {
+    padding-right:3px
+}
+.removeRecip:hover {
+    border-style:groove;
+    background-color:rgba(254,46,46,.7);
+    font-weight:bold;
+    cursor:pointer
+}
+#mailUI table td {
+    padding:5px;
+    border:1px solid #ddd
+}
+#mailUI .drop[colspan="2"] {
+    font-weight:bold
+}
+/*
+--------------------------------------------
+--------------------------------------------
+*/
+
+/*
+Contact List Style
+--------------------------------------------
+*/
+.contactListImg {
+    width:30px
+}
+#contactList td:first-child img {
+    width:40px
+}
+.contactBday img{
+    width:50px;
+    margin-left:10px
+}
+.removeFromGroup {
+    width:50px
+}
+.letter{
+    text-align:left;
+    font-weight:bold
+}
+.removeFromGroup {
+    width:40px
+}
+/*
+--------------------------------------------
+--------------------------------------------
+*/
+
+/*
+Map UI
+--------------------------------------------
+*/
+#map iframe {
+    width:100%;
+    border-radius:2px;
+    border:1px solid #ddd;
+}
+/*
+--------------------------------------------
+--------------------------------------------
+*/
